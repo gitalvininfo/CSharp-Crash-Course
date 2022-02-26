@@ -6,9 +6,8 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-            Console.ReadKey();
-            Console.Beep();
+            int x = 123;
+            Console.WriteLine(x);
         }
     }
 }
