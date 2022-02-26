@@ -6,16 +6,18 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
+            //for(int i = 0; i < 10; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
 
-            String name = "";
-
-            while(name == "")
+            for(int i = 10; i > 0; i--)
             {
-                Console.Write("Enter your name: ");
-                name = Console.ReadLine();
+                Console.WriteLine(i);
             }
 
-            Console.WriteLine("Hello " + name);
+            Console.WriteLine("Happy New Year!!!");
+
 
             Console.Beep();
             Console.ReadKey();
