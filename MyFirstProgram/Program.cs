@@ -7,17 +7,15 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            Console.WriteLine("What is the temperature outside: (C)");
-            double temp = Convert.ToDouble(Console.ReadLine());
-            
-            if(temp >= 10 && temp <=25)
+            String name = "";
+
+            while(name == "")
             {
-                Console.WriteLine("It is warm upside.");
+                Console.Write("Enter your name: ");
+                name = Console.ReadLine();
             }
-            else if (temp <= -50 || temp >= 50)
-            {
-                Console.WriteLine("Do not go outside!");
-            }
+
+            Console.WriteLine("Hello " + name);
 
             Console.Beep();
             Console.ReadKey();
