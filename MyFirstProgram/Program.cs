@@ -6,9 +6,7 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            double total;
-
-            total = Multiply(2, 3, 4);
+            double total = Checkout(3.99, 5.75, 15);
 
             Console.WriteLine(total);
 
@@ -16,14 +14,16 @@ namespace MyFirstProgram
             Console.ReadKey();
         } 
 
-        static double Multiply(double x, double y)
+        static double Checkout(params double[] prices)
         {
-            return x * y;
-        }
+            double total = 0;
 
-        static double Multiply(double x, double y, double z)
-        {
-            return x * y * z;
+            foreach(double price in prices)
+            {
+                total = total + price;
+            }
+
+            return total;
         }
     }
 }
