@@ -6,24 +6,54 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            double total = Checkout(3.99, 5.75, 15);
 
-            Console.WriteLine(total);
+            int x, y, result;
+            bool isContinue = true;
 
+            while (isContinue)
+            {
+                try
+                {
+                    Console.Write("Enter num 1: ");
+                    x = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Enter num 2: ");
+                    y = Convert.ToInt32(Console.ReadLine());
+
+                    result = x * y;
+
+                    Console.WriteLine(result);
+                    Console.WriteLine("Do you want to continue? (y/n)");
+
+                    if(Console.ReadLine() == "y")
+                    {
+                        isContinue = true;
+                    }
+                        else
+                    {
+                        isContinue = false;
+                    }
+
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine("Enter only numbers pls.");
+                    continue;
+                }
+                catch (DivideByZeroException e)
+                {
+                    Console.WriteLine("You cant divide by zero.");
+                    continue;
+                }
+
+                finally
+                {
+                    Console.WriteLine("Thanks for try catch");
+                }
+            }
             Console.Beep();
             Console.ReadKey();
-        } 
-
-        static double Checkout(params double[] prices)
-        {
-            double total = 0;
-
-            foreach(double price in prices)
-            {
-                total = total + price;
-            }
-
-            return total;
         }
+
     }
 }
