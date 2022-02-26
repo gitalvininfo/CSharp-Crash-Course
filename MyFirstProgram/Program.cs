@@ -17,8 +17,6 @@ namespace MyFirstProgram
             }
 
             Console.WriteLine("Happy New Year!!!");
-
-
             Console.Beep();
             Console.ReadKey();
             
