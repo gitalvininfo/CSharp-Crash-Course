@@ -7,9 +7,15 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            Pizza pizza1 = new Pizza("stuffed crust", "red sauce", "mozzarella", "pepperoni");
+            // inheritance = 1 or more child classes receiving fields, methods, etc from a common base class or parent class.
 
-            Pizza pizza2 = new Pizza("stuffed crust", "red sauce", "mozzarella");
+            Car car = new Car();
+            Bicycle bicycle = new Bicycle();
+            Boat boat = new Boat();
+
+            Console.WriteLine(car.speed);
+            Console.WriteLine(car.wheels);
+            car.Go();
 
 
             Console.Beep();
@@ -17,27 +23,29 @@ namespace MyFirstProgram
         }
 
     }
-
-    class Pizza
+    
+    class Vehicle
     {
+        public int speed = 0;
 
-        String bread, sauce, cheese, topping;
-
-        public Pizza(string bread, string sauce, string cheese, string topping)
+        public void Go()
         {
-            this.bread = bread;
-            this.sauce = sauce;
-            this.cheese = cheese;
-            this.topping = topping;
-        }
-
-        public Pizza(string bread, string sauce, string cheese)
-        {
-            this.bread = bread;
-            this.sauce = sauce;
-            this.cheese = cheese;
+            Console.WriteLine("This vehicle is moving.");
         }
     }
 
-    
+    class Car : Vehicle 
+    {
+        public int wheels = 4;
+    }
+
+    class Bicycle : Vehicle
+    {
+        public int wheels = 2; 
+    }
+
+    class Boat : Vehicle
+    {
+        public int wheels = 0;
+    }
 }
