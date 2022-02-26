@@ -7,22 +7,24 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            for (int i = 0; i < 3; i++) 
-            {
-                singHappyBirthday("Alvin");
-            }
+            double x, y;
+
+            Console.Write("Enter num 1: ");
+            x = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter num 2: ");
+            y = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Result is " + Multiply(x, y));
 
             Console.Beep();
             Console.ReadKey();
-            
+
         } 
 
-        static void singHappyBirthday(String name)
+        static double Multiply(double x, double y)
         {
-            Console.WriteLine("Happy Birthday to you... " + name);
-            Console.WriteLine("Happy Birthday to you... " + name);
-            Console.WriteLine("Happy Birthday to you... " + name);
-            Console.WriteLine();
+            return x * y;
         }
     }
 }
