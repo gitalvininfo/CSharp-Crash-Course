@@ -7,19 +7,13 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            Human human1 = new Human();
-            human1.name = "Rick";
-            human1.age = 65;
+            Car car1 = new Car("Ford", "Mustang", 2022, "red");
+            Car car2 = new Car("Chevy", "Corvette", 2021, "blue");
 
-            human1.Eat();
-            human1.Sleep();
 
-            Human human2 = new Human();
-            human2.name = "Morty";
-            human2.age = 60;
+            car1.Drive();
+            car2.Drive();
 
-            human2.Eat();
-            human2.Sleep();
 
             Console.Beep();
             Console.ReadKey();
@@ -27,21 +21,22 @@ namespace MyFirstProgram
 
     }
 
-    class Human
+    class Car
     {
-        public String name;
-        public int age;
+        String make, model, color;
+        int year;
 
-        public void Eat()
+        public Car(String make, String model, int year, String color)
         {
-            Console.WriteLine(name + " is eating.");
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.color = color;
         }
 
-        public void Sleep()
+        public void Drive()
         {
-            Console.WriteLine(name + " is sleeping.");
+            Console.WriteLine("You drive the " + make + " " + model);
         }
-
-
     }
 }
