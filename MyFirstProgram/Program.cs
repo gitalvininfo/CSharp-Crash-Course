@@ -6,14 +6,11 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What is your name?");
-            String name = Console.ReadLine();
 
-            Console.WriteLine("What is your age?");
-            int age = Convert.ToInt32(Console.ReadLine());
+            int friends = 5;
+            friends += 3;
 
-            Console.WriteLine("Hello " + name + ", your age is " + age);
-
+            Console.WriteLine(friends);
 
             Console.Beep();
             Console.ReadKey();
