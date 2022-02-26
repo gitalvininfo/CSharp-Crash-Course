@@ -7,20 +7,19 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            //String[] cars = { "BMW", "Mustang", "Audi", "Lamborghini", "Ferrari" };
-
-            String[] cars = new string[4];
+            String[] cars = new string[5];
 
             cars[0] = "BMW";
             cars[1] = "Mustang";
             cars[2] = "Audi";
             cars[3] = "Lamborghini";
+            cars[4] = "Ferrari";
 
-
-            for (int i = 0; i < cars.Length; i++)
+            foreach(String car in cars)
             {
-                Console.WriteLine("\t" + cars[i]);
+                Console.WriteLine(car);
             }
+
 
             Console.Beep();
             Console.ReadKey();
