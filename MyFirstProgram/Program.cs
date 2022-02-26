@@ -7,15 +7,12 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            // inheritance = 1 or more child classes receiving fields, methods, etc from a common base class or parent class.
+            // abstract classes = modifier that indicates missing components or incomplete implementation. Prevent instantiating.
 
             Car car = new Car();
             Bicycle bicycle = new Bicycle();
             Boat boat = new Boat();
-
-            Console.WriteLine(car.speed);
-            Console.WriteLine(car.wheels);
-            car.Go();
+            //Vehicle vehicle = new Vehicle();
 
 
             Console.Beep();
@@ -24,7 +21,7 @@ namespace MyFirstProgram
 
     }
     
-    class Vehicle
+    abstract class Vehicle
     {
         public int speed = 0;
 
