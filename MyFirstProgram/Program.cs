@@ -7,13 +7,13 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            double temperature = 30;
-            String message;
+            String firstname = "Bro";
+            String lastname = "Code";
+            int age = 20;
 
-            message = temperature > 25 ? "Hot" : "Cold";
+            Console.WriteLine($"Hello { firstname, 10} { lastname}");
 
-            Console.WriteLine(message);
-            
+
             Console.Beep();
             Console.ReadKey();
         }
