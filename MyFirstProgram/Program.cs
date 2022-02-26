@@ -7,23 +7,22 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            String[] cars = new string[5];
-
-            cars[0] = "BMW";
-            cars[1] = "Mustang";
-            cars[2] = "Audi";
-            cars[3] = "Lamborghini";
-            cars[4] = "Ferrari";
-
-            foreach(String car in cars)
+            for (int i = 0; i < 3; i++) 
             {
-                Console.WriteLine(car);
+                singHappyBirthday("Alvin");
             }
-
 
             Console.Beep();
             Console.ReadKey();
             
         } 
+
+        static void singHappyBirthday(String name)
+        {
+            Console.WriteLine("Happy Birthday to you... " + name);
+            Console.WriteLine("Happy Birthday to you... " + name);
+            Console.WriteLine("Happy Birthday to you... " + name);
+            Console.WriteLine();
+        }
     }
 }
