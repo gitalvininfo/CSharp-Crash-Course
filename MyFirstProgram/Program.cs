@@ -7,17 +7,15 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            Random random = new Random();
+            Console.WriteLine("Enter side a: ");
+            double sideA = Convert.ToDouble(Console.ReadLine());
 
-            int num1 = random.Next(1,7);
-            int num2 = random.Next(1, 7);
-            int num3 = random.Next(1, 7);
-            double num = random.NextDouble();
+            Console.WriteLine("Enter side b: ");
+            double sideb = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine(num1);
-            Console.WriteLine(num2);
-            Console.WriteLine(num3);
+            double answer = Math.Sqrt((sideA * sideA) + (sideb * sideb));
 
+            Console.WriteLine("Answer is " + answer);
 
             Console.Beep();
             Console.ReadKey();
