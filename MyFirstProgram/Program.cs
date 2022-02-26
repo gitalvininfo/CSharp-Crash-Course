@@ -6,25 +6,24 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
+            double total;
 
-            double x, y;
+            total = Multiply(2, 3, 4);
 
-            Console.Write("Enter num 1: ");
-            x = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Enter num 2: ");
-            y = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Result is " + Multiply(x, y));
+            Console.WriteLine(total);
 
             Console.Beep();
             Console.ReadKey();
-
         } 
 
         static double Multiply(double x, double y)
         {
             return x * y;
+        }
+
+        static double Multiply(double x, double y, double z)
+        {
+            return x * y * z;
         }
     }
 }
