@@ -6,31 +6,18 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("What is your name?");
+            String name = Console.ReadLine();
 
-            double a = 3.14;
-            int b = Convert.ToInt32(a);
-            int c = 123;
-            double d = Convert.ToDouble(c);
-            int e = 321;
-            String f = Convert.ToString(e);
-            String g = "$";
-            char h = Convert.ToChar(g);
-            String i = "true";
-            bool j = Convert.ToBoolean(i);
+            Console.WriteLine("What is your age?");
+            int age = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(a.GetType());
+            Console.WriteLine("Hello " + name + ", your age is " + age);
 
-            Console.WriteLine(b.GetType());
-
-            Console.WriteLine(d.GetType());
-
-            Console.WriteLine(f.GetType());
-
-            Console.WriteLine(h + " " + h.GetType());
 
             Console.Beep();
-
             Console.ReadKey();
+            
         } 
     }
 }
