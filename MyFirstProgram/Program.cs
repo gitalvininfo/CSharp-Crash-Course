@@ -7,15 +7,27 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Enter side a: ");
-            double sideA = Convert.ToDouble(Console.ReadLine());
+            String fullName = "Bro Code";
+            String phoneNumber = "123-465-7890";
 
-            Console.WriteLine("Enter side b: ");
-            double sideb = Convert.ToDouble(Console.ReadLine());
+            //fullName.ToUpper();
+            //fullName.ToLower();
+            //Console.WriteLine(fullName);
 
-            double answer = Math.Sqrt((sideA * sideA) + (sideb * sideb));
+            //phoneNumber = phoneNumber.Replace("-", "/");
+            //Console.WriteLine(phoneNumber);
 
-            Console.WriteLine("Answer is " + answer);
+            //String userName = fullName.Insert(0, "@");
+            //Console.WriteLine(userName);
+
+            //Console.WriteLine(fullName.Length);
+
+            // index to start then how many characters to slice;
+            //String firstName = fullName.Substring(0, 3);
+            //Console.WriteLine(firstName);
+
+            String lastName = fullName.Substring(4, 4);
+            Console.WriteLine(lastName);
 
             Console.Beep();
             Console.ReadKey();
