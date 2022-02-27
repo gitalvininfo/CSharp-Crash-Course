@@ -7,11 +7,23 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            // ToString() = converts an object to its string representation so that is is nice to display.
+            // polymorphism = greek word that means to have many forms
+            // object can be identified by more than one type
+            // ex. a Dog is also: Canine, Animal, Organism
+            // if you need to create an array of different types of objects
+            // you need to find what they have in common;
 
-            Car car = new Car("Chevy", "Corvette", "blue", 2022);
+            Car car = new Car();
+            Bicycle bicycle = new Bicycle();
+            Boat boat = new Boat();
 
-            Console.WriteLine(car);
+            Vehicle[] vehicles = { car, bicycle, boat };
+
+            foreach(Vehicle vehicle in vehicles)
+            {
+                vehicle.Go();
+            }
+
 
             Console.Beep();
             Console.ReadKey();
@@ -20,25 +32,37 @@ namespace MyFirstProgram
     }
 
 
-    class Car
+    class Vehicle
     {
-        String make, model, color;
-        int year;
-
-        public Car(string make, string model, string color, int year)
+        public virtual void Go()
         {
-            this.make = make;
-            this.model = model;
-            this.color = color;
-            this.year = year;
-        }
-
-        public override string ToString()
-        {
-            return "This is a " + make + " " + model;
+            Console.WriteLine("The vehicle is moving");
         }
     }
 
+    class Car : Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The car is moving");
+        }
+    }
+
+    class Bicycle : Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The bicycle is moving");
+        }
+    }
+
+    class Boat : Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The boat is moving");
+        }
+    }
 
 
 }
