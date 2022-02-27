@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MyFirstProgram
 {
@@ -6,74 +7,41 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
+            // List = data structure that represents a list of objects that can be accessed by index.
+            // similar to array, but can dynamically increase/decrease in size
+            // using System.Collections.Generic;
+            // but they waste more memory;s
 
-            // interfaces = defines a contract that all classes inheriting from should follow
-            // an interface declares "what a class should have"
-            // an inheriting class defines "how it should do it"
-            // benefit = security + multiple inheritance + plug and play
+            List<String> food = new List<String>();
+
+            food.Add("fries");
+            food.Add("pizza");
+            food.Add("hamburger");
+            food.Add("hotdog");
+            food.Add("fries");
+
+            //food.Remove("fries");
+            //food.Insert(0, "sushi");
+            //Console.WriteLine(food.Count);
+            //Console.WriteLine(food.IndexOf("pizza"));
+            //Console.WriteLine(food.LastIndexOf("fries"));
+            //Console.WriteLine(food.Contains("pizza"));
+            //food.Sort();
+            //food.Reverse();
+            //food.Clear();
+
+            String[] foodArray = food.ToArray();
 
 
-            Rabbit rabbit = new Rabbit();
-            rabbit.Flee();
-
-            Hawk hawk = new Hawk();
-            hawk.Hunt();
-            hawk.Flee();
-
-            Fish fish = new Fish();
-            fish.Flee();
-            fish.Hunt();
+            foreach (String item in food)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.Beep();
             Console.ReadKey();
         }
 
-    }
-
-    interface Prey
-    {
-        void Flee();
-    }
-
-    interface Predator
-    {
-        void Hunt();
-    }
-
-
-    class Rabbit : Prey
-    {
-        public void Flee()
-        {
-            Console.WriteLine("The rabbit runs away!");
-        }
-    }
-
-    class Hawk : Predator, Prey
-    {
-        public void Hunt()
-        {
-            Console.WriteLine("The hawk is searching for food!");
-        }
-        public void Flee()
-        {
-            Console.WriteLine("The hawk flies away!");
-        }
-
-    }
-
-    class Fish : Prey, Predator
-    {
-
-        public void Flee()
-        {
-            Console.WriteLine("The fish swims away!");
-        }
-
-        public void Hunt()
-        {
-            Console.WriteLine("The fish is searching for food!");
-        }
     }
 
 }
