@@ -7,12 +7,22 @@ namespace MyFirstProgram
         static void Main(string[] args)
         {
 
-            // abstract classes = modifier that indicates missing components or incomplete implementation. Prevent instantiating.
+            //Car[] garage = new Car[3];
 
-            Car car = new Car();
-            Bicycle bicycle = new Bicycle();
-            Boat boat = new Boat();
-            //Vehicle vehicle = new Vehicle();
+            //Car car1 = new Car("Mustang");
+            //Car car2 = new Car("Corvette");
+            //Car car3 = new Car("Lambo");
+
+            //garage[0] = car1;
+            //garage[1] = car2;
+            //garage[2] = car3;
+
+            Car[] garage = { new Car("Mustang"), new Car("Corvette"), new Car("Lambo") };
+
+            foreach (Car car in garage)
+            {
+                Console.WriteLine(car.model);
+            }
 
 
             Console.Beep();
@@ -20,29 +30,15 @@ namespace MyFirstProgram
         }
 
     }
-    
-    abstract class Vehicle
-    {
-        public int speed = 0;
 
-        public void Go()
+    class Car
+    {
+        public String model;
+
+        public Car(String model)
         {
-            Console.WriteLine("This vehicle is moving.");
+            this.model = model;
         }
     }
 
-    class Car : Vehicle 
-    {
-        public int wheels = 4;
-    }
-
-    class Bicycle : Vehicle
-    {
-        public int wheels = 2; 
-    }
-
-    class Boat : Vehicle
-    {
-        public int wheels = 0;
-    }
 }
