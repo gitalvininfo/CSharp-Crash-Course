@@ -6,27 +6,27 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
+            Car car1 = new Car("Mustang", "red");
+            Car car2 = Copy(car1);
 
-            //Car[] garage = new Car[3];
+            //ChangeColor(car1, "silver");
 
-            //Car car1 = new Car("Mustang");
-            //Car car2 = new Car("Corvette");
-            //Car car3 = new Car("Lambo");
+            //Console.WriteLine(car1.model + " " + car1.color);
 
-            //garage[0] = car1;
-            //garage[1] = car2;
-            //garage[2] = car3;
-
-            Car[] garage = { new Car("Mustang"), new Car("Corvette"), new Car("Lambo") };
-
-            foreach (Car car in garage)
-            {
-                Console.WriteLine(car.model);
-            }
-
+            Console.WriteLine(car2.model + car2.color);
 
             Console.Beep();
             Console.ReadKey();
+        }
+
+        //public static void ChangeColor(Car car, String color)
+        //{
+        //    car.color = color;
+        //}
+
+        public static Car Copy(Car car)
+        {
+            return new Car(car.model, car.color);
         }
 
     }
@@ -34,10 +34,12 @@ namespace MyFirstProgram
     class Car
     {
         public String model;
+        public String color;
 
-        public Car(String model)
+        public Car(String model, String color)
         {
             this.model = model;
+            this.color = color;
         }
     }
 
