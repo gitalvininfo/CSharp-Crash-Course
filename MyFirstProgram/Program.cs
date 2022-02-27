@@ -7,41 +7,41 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // List = data structure that represents a list of objects that can be accessed by index.
-            // similar to array, but can dynamically increase/decrease in size
-            // using System.Collections.Generic;
-            // but they waste more memory;s
 
-            List<String> food = new List<String>();
+            List<Player> players = new List<Player>();
 
-            food.Add("fries");
-            food.Add("pizza");
-            food.Add("hamburger");
-            food.Add("hotdog");
-            food.Add("fries");
+            Player player1 = new Player("Player 1");
+            Player player2 = new Player("Player 2");
+            Player player3 = new Player("Player 3");
 
-            //food.Remove("fries");
-            //food.Insert(0, "sushi");
-            //Console.WriteLine(food.Count);
-            //Console.WriteLine(food.IndexOf("pizza"));
-            //Console.WriteLine(food.LastIndexOf("fries"));
-            //Console.WriteLine(food.Contains("pizza"));
-            //food.Sort();
-            //food.Reverse();
-            //food.Clear();
+            players.Add(player1);
+            players.Add(player2);
+            players.Add(player3);
 
-            String[] foodArray = food.ToArray();
-
-
-            foreach (String item in food)
+            foreach(Player player in players)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(player);
             }
 
             Console.Beep();
             Console.ReadKey();
         }
 
+    }
+
+    class Player
+    {
+        public String username;
+
+        public Player(String username)
+        {
+            this.username = username;
+        }
+
+        public override string ToString()
+        {
+            return username;
+        }
     }
 
 }
