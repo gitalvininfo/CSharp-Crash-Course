@@ -7,13 +7,15 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
+            // Auto implemented property - shortcut when no additional logic is required in the property.
+            // you do not have to define a property
+            // you only have to write get; and/or set; inside the property
 
-            Car car = new Car(10000000);
+            Car car = new Car("Porche");
+            car.Model = "Ferrari";
 
-            car.Speed = 50000000;
+            Console.WriteLine(car.Model);
 
-            Console.WriteLine(car.Speed);
-            
             Console.Beep();
             Console.ReadKey();
         }
@@ -22,29 +24,11 @@ namespace MyFirstProgram
 
     class Car
     {
-        private int speed;
+        public String Model { get; set; }
 
-        public Car (int speed)
+        public Car(String model)
         {
-            this.speed = speed;
-        }
-
-        public int Speed
-        {
-            get
-            {
-                return speed;
-            }
-            set
-            {
-                if(speed > 500)
-                {
-                    speed = 500;
-                }   else
-                {
-                    speed = value;
-                }
-            }
+            this.Model = model;
         }
     }
 
