@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace MyFirstProgram
 {
@@ -7,30 +6,49 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // generic = not specified to a particular data type
-            // add <T> to: classes, methods, fields, etc
-            // allows for code reusability for different data types
-
-            int[] intArray = { 1, 2, 3 };
-            double[] doubleArray = { 1.0, 2.0, 3.0 };
-            String[] stringArrays = { "1", "2", "3" };
-
-            DisplayElements(intArray);
-            DisplayElements(doubleArray);
-            DisplayElements(stringArrays);
+            // thread = an execution path of a program
+            // we can use multiple threads to perform
+            // different tasks of our program at the same time
+            // current thread running is main thread
+            // using System.Threading;
 
 
+            Thread mainThread = Thread.CurrentThread;
+            mainThread.Name = "Main Thread";
+
+            Thread thread1 = new Thread(() => CountDown("Player 1"));
+            Thread thread2 = new Thread(() => CountUp("Player 2"));
+
+            thread1.Start();
+            thread2.Start();
+
+
+
+            Console.WriteLine(mainThread.Name + " is complete!");
             Console.Beep();
             Console.ReadKey();
         }
 
-        public static void DisplayElements<T>(T[] array)
+
+        public static void CountDown(String name)
         {
-            foreach(T item in array)
+            for (int i = 10; i >= 0; i--)
             {
-                Console.Write(item + " ");
+                Console.WriteLine("Timer # 1: " + i + " secs" + " " + name);
+                Thread.Sleep(1000);
             }
-            Console.WriteLine();
+            Console.WriteLine("Timer #1 is finished");
+        }
+
+        public static void CountUp(String name)
+        {
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.WriteLine("Timer # 2: " + i + " secs" + " " + name);
+                Thread.Sleep(1000);
+            }
+
+            Console.WriteLine("Timer #2 is finished");
         }
 
 
