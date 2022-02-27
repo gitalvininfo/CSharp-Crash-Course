@@ -6,41 +6,49 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Car car1 = new Car("Mustang", "red");
-            Car car2 = Copy(car1);
+            // method overriding = provides a new version of a method inherited from a parent class
+            // inherited method (i.e the parent method) must be abstract with no body ha
+            // virtual, or already overriden
+            // used with ToString, polymorphism
 
-            //ChangeColor(car1, "silver");
 
-            //Console.WriteLine(car1.model + " " + car1.color);
+            Dog dog = new Dog();
+            Cat cat = new Cat();
 
-            Console.WriteLine(car2.model + car2.color);
-
+            dog.Speak();
+            cat.Speak();
+            
             Console.Beep();
             Console.ReadKey();
         }
 
-        //public static void ChangeColor(Car car, String color)
-        //{
-        //    car.color = color;
-        //}
-
-        public static Car Copy(Car car)
-        {
-            return new Car(car.model, car.color);
-        }
-
     }
 
-    class Car
+
+    class Animal
     {
-        public String model;
-        public String color;
-
-        public Car(String model, String color)
+        // indicate this method can be overriden
+        public virtual void Speak()
         {
-            this.model = model;
-            this.color = color;
+            Console.WriteLine("The animal goes *brrrr*");
         }
     }
+
+    class Dog : Animal
+    {
+        public override void Speak()
+        {
+            Console.WriteLine("The dog goes *woffff*");
+        }
+    }
+
+    class Cat : Animal
+    {
+        public override void Speak()
+        {
+            Console.WriteLine("The cat goes *meooowww*");
+        }
+    }
+
 
 }
