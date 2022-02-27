@@ -7,29 +7,60 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // Auto implemented property - shortcut when no additional logic is required in the property.
-            // you do not have to define a property
-            // you only have to write get; and/or set; inside the property
+            // enums = special class that contains a set of named integer constants;
+            // use enums when you have values that you know will not change;
+            // to get the integer value from an item, you must explicitly convert to an int
 
-            Car car = new Car("Porche");
-            car.Model = "Ferrari";
+            //Console.WriteLine(Planets.Pluto + " is planet # " + (int) Planets.Pluto );
 
-            Console.WriteLine(car.Model);
+            String name = PlanetRadius.Earth.ToString();
+            int radius = (int)PlanetRadius.Earth;
+            double volume = Volume(PlanetRadius.Earth);
+
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Radius: " + radius);
+            Console.WriteLine("Volume: " + volume);
+
 
             Console.Beep();
             Console.ReadKey();
         }
 
-    }
 
-    class Car
-    {
-        public String Model { get; set; }
-
-        public Car(String model)
+        public static double Volume(PlanetRadius radius)
         {
-            this.Model = model;
+
+            double volume = (4.0/3.0) * Math.PI * Math.Pow((int)radius, 3);
+            return volume;
         }
+
     }
+
+    enum Planets
+    {
+        Mercury,
+        Venus,
+        Earth,
+        Mars,
+        Jupiter,
+        Saturn,
+        Uranus,
+        Neptune,
+        Pluto
+    }
+
+    enum PlanetRadius
+    {
+        Mercury = 2439,
+        Venus = 6051,
+        Earth = 6371,
+        Mars = 3389,
+        Jupiter = 69911,
+        Saturn = 58232,
+        Uranus = 25362,
+        Neptune = 24622,
+        Pluto = 1188
+    }
+
 
 }
