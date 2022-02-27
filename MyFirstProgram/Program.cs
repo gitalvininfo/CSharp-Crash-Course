@@ -7,59 +7,33 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // enums = special class that contains a set of named integer constants;
-            // use enums when you have values that you know will not change;
-            // to get the integer value from an item, you must explicitly convert to an int
+            // generic = not specified to a particular data type
+            // add <T> to: classes, methods, fields, etc
+            // allows for code reusability for different data types
 
-            //Console.WriteLine(Planets.Pluto + " is planet # " + (int) Planets.Pluto );
+            int[] intArray = { 1, 2, 3 };
+            double[] doubleArray = { 1.0, 2.0, 3.0 };
+            String[] stringArrays = { "1", "2", "3" };
 
-            String name = PlanetRadius.Earth.ToString();
-            int radius = (int)PlanetRadius.Earth;
-            double volume = Volume(PlanetRadius.Earth);
-
-            Console.WriteLine("Name: " + name);
-            Console.WriteLine("Radius: " + radius);
-            Console.WriteLine("Volume: " + volume);
+            DisplayElements(intArray);
+            DisplayElements(doubleArray);
+            DisplayElements(stringArrays);
 
 
             Console.Beep();
             Console.ReadKey();
         }
 
-
-        public static double Volume(PlanetRadius radius)
+        public static void DisplayElements<T>(T[] array)
         {
-
-            double volume = (4.0/3.0) * Math.PI * Math.Pow((int)radius, 3);
-            return volume;
+            foreach(T item in array)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
         }
 
-    }
 
-    enum Planets
-    {
-        Mercury,
-        Venus,
-        Earth,
-        Mars,
-        Jupiter,
-        Saturn,
-        Uranus,
-        Neptune,
-        Pluto
-    }
-
-    enum PlanetRadius
-    {
-        Mercury = 2439,
-        Venus = 6051,
-        Earth = 6371,
-        Mars = 3389,
-        Jupiter = 69911,
-        Saturn = 58232,
-        Uranus = 25362,
-        Neptune = 24622,
-        Pluto = 1188
     }
 
 
